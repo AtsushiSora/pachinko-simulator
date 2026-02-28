@@ -2,21 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Pachinko Simulator</title>
     <link rel="stylesheet" href="style.css">
+<meta name="description" content="1/319確率・確変65%・継続率80%のパチンコシミュレーター。期待値や連チャン性能を体験できます。">
 </head>
 <body>
 
     <h1>パチンコシュミレーター</h1>
     <h2>319 ~確変65%突破 継続率80% オール1500発~</h2>
+ 
 
    <div id="result">ボタンを押してスタート</div>
 
     <button onclick="draw()">回す</button>
 
+   <section class="about">
+  <h3>このシミュレーターについて</h3>
+  <p>
+    本サイトは1/319の大当たり確率、確変突入率65%、継続率80%を想定したパチンコシミュレーターです。
+  </p>
+
+  <button onclick="shareScreen()">結果をシェア</button>
+  
+</section>
 
 
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script src="main.js"></script>
 </body>
 </html>
