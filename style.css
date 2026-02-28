@@ -108,3 +108,10 @@ button:hover {
   50%  { background: yellow; }
   100% { background: red; }
 }
+
+.about {
+  margin-top: 60px;
+  max-width: 600px;
+  font-size: 14px;
+  opacity: 0.8;
+}
