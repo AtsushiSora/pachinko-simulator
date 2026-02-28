@@ -152,3 +152,39 @@ function draw() {
     }
   }
 }
+
+function shareScreen() {
+
+  html2canvas(document.body).then(canvas => {
+
+    canvas.toBlob(blob => {
+
+      const file = new File([blob], "pachinko-result.png", {
+        type: "image/png"
+      });
+
+      // 📱 スマホ用（画像付きシェア）
+      if (navigator.share && navigator.canShare({ files: [file] })) {
+
+        navigator.share({
+          title: "パチンコシミュレーター結果",
+          text: "結果をシェア！",
+          files: [file]
+        }).catch(() => {});
+
+      } else {
+
+        // PCはダウンロード
+        const link = document.createElement("a");
+        link.href = canvas.toDataURL();
+        link.download = "pachinko-result.png";
+        link.click();
+
+        alert("画像を保存しました。SNSにアップしてください！");
+      }
+
+    });
+
+  });
+
+}
